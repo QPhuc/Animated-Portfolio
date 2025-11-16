@@ -1,7 +1,8 @@
 import { AnimatePresence, motion } from 'framer-motion'
 import { BorderBeam } from '../lightswind/border-beam'
-import { BookCheckIcon, Moon, Sun } from 'lucide-react'
+import { BookCheckIcon, Menu, Moon, Sun } from 'lucide-react'
 import { useState } from 'react';
+import { useLenis } from 'lenis/react';
 
 const navItems = [
     { name: "Home", href: "#hero" },
@@ -12,10 +13,15 @@ const navItems = [
 ];
 const Header = () => {
     const [theme, setTheme] = useState("dark");
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const lenis = useLenis();
 
     const handleScrollTo = (id: string) => {
-        const element = document.querySelector(id)
-    }
+        if (lenis) {
+            lenis.scrollTo(id);
+        }
+        setIsMobileMenuOpen(false); // Close mobile menu on click
+    };
 
     return (
         <AnimatePresence>
@@ -91,6 +97,13 @@ const Header = () => {
                             )}
                         </AnimatePresence>
                     </motion.button>
+                    {/* Mobile Menu Button - Hamburger */}
+                    <button
+                        onClick={() => setIsMobileMenuOpen(true)}
+                        className="md:hidden text-gray-800 dark:text-white"
+                    >
+                        <Menu size={24} />
+                    </button>
                 </div>
             </motion.header>
         </AnimatePresence>
