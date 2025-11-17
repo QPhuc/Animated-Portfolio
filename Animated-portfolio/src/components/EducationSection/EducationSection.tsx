@@ -1,4 +1,6 @@
 import { motion } from "framer-motion"
+import { Card, CardContent, CardHeader, CardTitle } from "../lightswind/card"
+import ProfessionalProfile from "./SkillCategory"
 
 const EducationSection = () => {
     return (
@@ -10,7 +12,49 @@ const EducationSection = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             viewport={{ once: true, amount: 0.2 }}
         >
+            {/* Education */}
+            <div>
+                <motion.h3
+                    className="text-3xl font-bold mb-6"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    Education
+                </motion.h3>
 
+                <motion.div
+                    className="grid grid-cols-1 md:grid-cols-1 gap-8"
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.6, ease: "easeOut" }}
+                    viewport={{ once: true }}
+                >
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Information Technology</CardTitle>
+                            <p className="text-sm text-muted-foreground">
+                                Kien Giang University | 2015 - 2019
+                            </p>
+                        </CardHeader>
+                        <CardContent className="text-xs text-muted-foreground space-y-2">
+                            <p>
+                                Specialized in <strong>Software Architecture</strong>,
+                                <strong> Distributed Systems</strong>, and
+                                <strong> Artificial Intelligence Applications</strong>.
+                            </p>
+                            <ul className="list-disc list-inside space-y-1">
+                                <li>Thesis on Machine Learning for Predictive Analytics</li>
+                                <li>Led a research project on Cloud-Based ERP solutions</li>
+                                <li>Published 2 papers in IEEE conferences</li>
+                            </ul>
+                        </CardContent>
+                    </Card>
+                </motion.div>
+            </div>
+
+            <ProfessionalProfile />
         </motion.section>
     )
 }
