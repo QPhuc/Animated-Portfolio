@@ -1,6 +1,7 @@
 import ReactLenis from 'lenis/react'
 import './App.css'
 import AboutSection from './components/AboutSection/AboutSection'
+import EducationSection from './components/EducationSection/EducationSection'
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import StripesBackground from './components/lightswind/stripes-background'
@@ -24,6 +25,9 @@ function App() {
             </div>
             <div id="about">
               <AboutSection />
+            </div>
+            <div id="education">
+              <EducationSection />
             </div>
           </div>
         </div>
