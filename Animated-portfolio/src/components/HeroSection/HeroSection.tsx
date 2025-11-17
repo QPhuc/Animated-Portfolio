@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { Badge } from '../lightswind/badge';
+import Avatar from '../../assets/images/avatar.jpg';
 
 const HeroSection = () => {
     return (
@@ -84,7 +85,25 @@ const HeroSection = () => {
                 </motion.div>
             </motion.div>
 
-            
+            {/* Right Section */}
+            <motion.div
+                className="flex-1 flex justify-center p-6"
+                initial={{ opacity: 0, scale: 0.8, filter: "blur(10px)" }}
+                animate={{
+                    opacity: 1,
+                    scale: 1,
+                    filter: "blur(0px)",
+                }}
+                transition={{ delay: 0.5, duration: 1.2, ease: "easeOut" }}
+            >
+                <div className="w-64 h-64 rounded-full overflow-hidden shadow-lg">
+                    <img
+                        src={Avatar}
+                        alt="Tran Quang Phuc"
+                        className="w-full h-full object-cover"
+                    />
+                </div>
+            </motion.div>
         </motion.div >
     )
 }
