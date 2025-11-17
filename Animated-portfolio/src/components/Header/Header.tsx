@@ -117,7 +117,7 @@ const Header = () => {
                         {/* Logo / Brand */}
                         <a
                             onClick={() => handleScrollTo("#hero")}
-                            className="cursor-pointer font-bold text-lg text-gray-800 dark:text-white"
+                            className="cursor-pointer font-bold text-lg !text-gray-800 dark:text-white"
                         >
                             <BookCheckIcon />
                         </a>
@@ -128,7 +128,7 @@ const Header = () => {
                                 {navItems.map((item) => (
                                     <motion.li
                                         key={item.name}
-                                        className="relative group text-sm font-medium text-gray-600 dark:text-gray-300 transition-colors"
+                                        className="relative group text-sm font-medium !text-gray-600 dark:text-gray-300 transition-colors"
                                     >
                                         <a
                                             onClick={() => handleScrollTo(item.href)}
@@ -163,7 +163,7 @@ const Header = () => {
                                         exit={{ y: 20, opacity: 0 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        <Moon size={20} className="text-gray-800 dark:text-white" />
+                                        <Moon size={20} className="!text-gray-800 dark:text-white" />
                                     </motion.div>
                                 ) : (
                                     <motion.div
@@ -173,7 +173,7 @@ const Header = () => {
                                         exit={{ y: -20, opacity: 0 }}
                                         transition={{ duration: 0.2 }}
                                     >
-                                        <Sun size={20} className="text-gray-800 dark:text-white" />
+                                        <Sun size={20} className="!text-gray-800 dark:text-white" />
                                     </motion.div>
                                 )}
                             </AnimatePresence>
@@ -182,7 +182,7 @@ const Header = () => {
                         {/* Mobile Menu Button - Hamburger */}
                         <button
                             onClick={() => setIsMobileMenuOpen(true)}
-                            className="md:hidden text-gray-800 dark:text-white"
+                            className="md:hidden !text-gray-800 dark:text-white"
                         >
                             <Menu size={24} />
                         </button>
@@ -203,7 +203,7 @@ const Header = () => {
                                 {/* Close Button inside the sidebar */}
                                 <motion.button
                                     onClick={() => setIsMobileMenuOpen(false)}
-                                    className="absolute top-8 right-8 text-gray-800 dark:text-white"
+                                    className="absolute top-8 right-8 !text-gray-800 dark:text-white"
                                     initial={{ scale: 0, opacity: 0 }}
                                     animate={{ scale: 1, opacity: 1 }}
                                     exit={{ scale: 0, opacity: 0 }}
@@ -225,7 +225,7 @@ const Header = () => {
                                         >
                                             <a
                                                 onClick={() => handleScrollTo(item.href)}
-                                                className="text-4xl font-bold text-gray-800 dark:text-white cursor-pointer"
+                                                className="text-4xl font-bold !text-gray-800 dark:text-white cursor-pointer"
                                             >
                                                 {item.name}
                                             </a>
