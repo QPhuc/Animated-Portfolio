@@ -1,8 +1,9 @@
 import ReactLenis from 'lenis/react'
 import './App.css'
+import AboutSection from './components/AboutSection/AboutSection'
 import Header from './components/Header/Header'
-import StripesBackground from './components/lightswind/stripes-background'
 import HeroSection from './components/HeroSection/HeroSection'
+import StripesBackground from './components/lightswind/stripes-background'
 
 function App() {
 
@@ -20,6 +21,9 @@ function App() {
             {/* Give IDs to sections */}
             <div id="home">
               <HeroSection />
+            </div>
+            <div id="about">
+              <AboutSection />
             </div>
           </div>
         </div>
