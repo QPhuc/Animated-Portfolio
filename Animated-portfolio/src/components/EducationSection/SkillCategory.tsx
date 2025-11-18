@@ -2,6 +2,7 @@ import { AnimatePresence, motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "../lightswind/card"
 import { CountUp } from "../lightswind/count-up"
 import { Progress } from "../lightswind/progress"
+import { Badge } from "../lightswind/badge"
 
 const technicalSkills = [
     { name: "React.js / Next.js", level: 95 },
@@ -56,7 +57,7 @@ const ProfessionalProfile = () => {
                 transition={{ type: "spring", stiffness: 200, damping: 10 }}
                 viewport={{ once: true }}
             >
-
+                <Badge className="bg-pink-500">{skill}</Badge>
             </motion.div>
         ))
     }
