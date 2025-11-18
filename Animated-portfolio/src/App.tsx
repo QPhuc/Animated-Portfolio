@@ -1,11 +1,12 @@
 import ReactLenis from 'lenis/react'
 import './App.css'
 import AboutSection from './components/AboutSection/AboutSection'
+import CareerTimeline from './components/CareerTimeline/CareerTimeline'
 import EducationSection from './components/EducationSection/EducationSection'
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import StripesBackground from './components/lightswind/stripes-background'
-import CareerTimeline from './components/CareerTimeline/CareerTimeline'
+import ProjectsSection from './components/ProjectsSection/ProjectsSection'
 
 function App() {
 
@@ -32,6 +33,9 @@ function App() {
             </div>
             <div id="career">
               <CareerTimeline />
+            </div>
+            <div id="projects">
+              <ProjectsSection />
             </div>
           </div>
         </div>
