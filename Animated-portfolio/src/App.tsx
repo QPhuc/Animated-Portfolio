@@ -5,6 +5,7 @@ import EducationSection from './components/EducationSection/EducationSection'
 import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import StripesBackground from './components/lightswind/stripes-background'
+import CareerTimeline from './components/CareerTimeline/CareerTimeline'
 
 function App() {
 
@@ -28,6 +29,9 @@ function App() {
             </div>
             <div id="education">
               <EducationSection />
+            </div>
+            <div id="career">
+              <CareerTimeline />
             </div>
           </div>
         </div>
