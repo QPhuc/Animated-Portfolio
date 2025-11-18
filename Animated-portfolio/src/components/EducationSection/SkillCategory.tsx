@@ -1,9 +1,9 @@
-import { motion } from "framer-motion"
+import { AnimatePresence, motion } from "framer-motion"
 import { Card, CardContent, CardHeader, CardTitle } from "../lightswind/card"
 import { CountUp } from "../lightswind/count-up"
 import { Progress } from "../lightswind/progress"
 
-const skills = [
+const technicalSkills = [
     { name: "React.js / Next.js", level: 95 },
     { name: "Node.js / Express", level: 90 },
     { name: "TypeScript & JavaScript", level: 92 },
@@ -11,9 +11,18 @@ const skills = [
     { name: "Cloud (AWS / Azure)", level: 85 },
 ]
 
+const sortSkills = [
+    "Leadership",
+    "Problem Solving",
+    "Agile Methodologies",
+    "Mentorship",
+    "Strategic Thinking",
+    "Cross-Team Collaboration",
+]
+
 const ProfessionalProfile = () => {
-    const renderContent = () => {
-        return skills.map((skill, i) => (
+    const renderTechnicalSkills = () => {
+        return technicalSkills.map((skill, i) => (
             <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -20 }}
@@ -34,6 +43,20 @@ const ProfessionalProfile = () => {
                     />
                 </div>
                 <Progress value={skill.level} />
+            </motion.div>
+        ))
+    }
+
+    const renderSortSkills = () => {
+        return sortSkills.map((skill, i) => (
+            <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.8 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                transition={{ type: "spring", stiffness: 200, damping: 10 }}
+                viewport={{ once: true }}
+            >
+
             </motion.div>
         ))
     }
@@ -59,8 +82,19 @@ const ProfessionalProfile = () => {
                         <CardTitle>Technical Skills</CardTitle>
                     </CardHeader>
                     <CardContent className="space-y-4">
-                        {renderContent()}
+                        {renderTechnicalSkills()}
                     </CardContent>
+
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Soft Skills</CardTitle>
+                            <CardContent className="flex flex-wrap gap-2">
+                                <AnimatePresence>
+                                    {renderSortSkills()}
+                                </AnimatePresence>
+                            </CardContent>
+                        </CardHeader>
+                    </Card>
                 </Card>
             </div>
         </motion.section>
