@@ -9,6 +9,8 @@ import Header from './components/Header/Header'
 import HeroSection from './components/HeroSection/HeroSection'
 import StripesBackground from './components/lightswind/stripes-background'
 import ProjectsSection from './components/ProjectsSection/ProjectsSection'
+import { AnimatePresence, motion } from 'framer-motion';
+import Dock from './components/lightswind/dock'
 
 function App() {
   const [showDock, setShowDock] = useState(false);
@@ -101,7 +103,25 @@ function App() {
           </div>
         </div>
 
-        
+        {/* Dock with smooth show/hide animation */}
+        <AnimatePresence>
+          {showDock && (
+            <motion.div
+              initial={{ y: 100, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              exit={{ y: 100, opacity: 0 }}
+              transition={{ duration: 0.6, ease: "easeInOut" }}
+              className="fixed bottom-4 left-1/2 -translate-x-1/2 z-[999]"
+            >
+              <Dock
+                items={dockItems}
+                position="bottom"
+                magnification={70}
+                baseItemSize={50}
+              />
+            </motion.div>
+          )}
+        </AnimatePresence>
       </ReactLenis>
     </div>
   )
