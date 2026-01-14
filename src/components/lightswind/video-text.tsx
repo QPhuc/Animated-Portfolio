@@ -1,8 +1,8 @@
-"use client";
-
 import { cn } from "../lib/utils";
-import React, { ReactNode, useEffect, useState } from "react";
-import { motion, HTMLMotionProps } from "framer-motion";
+import React, { useEffect, useState } from "react";
+import type { ReactNode } from "react";
+import { motion } from "framer-motion";
+import type { HTMLMotionProps } from "framer-motion";
 
 export interface VideoTextProps {
   src: string;
@@ -56,7 +56,6 @@ export function VideoText({
   }, [content, fontSize, fontWeight, textAnchor, dominantBaseline, fontFamily]);
 
   const validTags = ["div", "span", "section", "article", "p", "h1", "h2", "h3", "h4", "h5", "h6"] as const;
-  type ValidTag = (typeof validTags)[number];
 
   const MotionComponent = motion[validTags.includes(as) ? as : "div"] as React.ElementType;
 
